@@ -1,0 +1,60 @@
+<div class="col-md-7">
+	<table class="flat-table">
+  		<tbody>
+		    <tr>
+		      <th>No</th>
+		      <th>Penghasilan</th>
+		      <th>Tanggungan</th>
+		      <th>Pekerjaan</th>
+		      <th>Jenis Kelamin</th>
+		      <th>Hasil</th>
+		    </tr>
+		     
+			<% _.each(users, function(user){ %>
+			<tr>
+			  <td><%= user.id %></td>	
+		      <td><%= user.penghasilan %></td>		      
+		      <td><%= user.tanggungan %></td>
+		      <td><%= user.pekerjaan %></td> 
+		      <td><%= user.kelamin %></td>
+		      <td><%= user.hasil %></td>
+		    </tr>
+			<%});%>
+    	</tbody>
+	</table>
+</div>
+				
+<div class="col-md-5">
+	<h3 class="dark-grey">Add a Decission</h3>
+	<form id="form1">	
+		<div class="form-group col-lg-6">
+			<label>Penghasilan</label>
+			<input type="text" name="penghasilan" class="form-control">
+		</div>
+		
+		<div class="form-group col-lg-6">
+			<label>Tanggungan</label>
+			<input type="text" name="tanggungan" class="form-control">
+		</div>
+						
+		<div class="form-group col-lg-6">
+			<label>Pekerjaan</label>
+			<input type="text" name="pekerjaan" class="form-control">
+		</div>
+		
+		<div class="form-group col-lg-6">
+			<label>Jenis Kelamin</label>
+			<input type="text" name="kelamin" class="form-control">
+		</div>			
+		
+		<% if(typeof hasil != 'undefined') {%>
+		<div class="form-group col-lg-12" style="text-align: center">
+			<h4>Hasil : </h4>
+			<h2>BERHAK</h2>
+		</div>		
+		<%}%>	
+
+		<button type="submit" id="make" class="btn btn-primary btn-block">Make a Decission</button>
+	</form>
+</div>
+

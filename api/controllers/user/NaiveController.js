@@ -4,7 +4,6 @@ module.exports = {
 		shortcuts: true,
 		rest: true,
 		actions: true,
-		model: 'data'
 	},
 
 	showData: function(req, res){
@@ -37,10 +36,27 @@ module.exports = {
 	makeADecission: function(req, res){
 		// console.log(req.body['penghasilan']);
 
-		naive.calculate(req.body);
+		// res.send(naive.calculate(req.body));
 
-		// console.log(Object.keys(req.body)[0]);
+		// console.log(naive.calculate(req.body));
+		naive.calculate(req.body, function(response){
+			res.send(response);
+		});
 		// for()
 		// naive.calculate();
+	},
+
+	create: function(req, res, next){
+		// console.log(req.params.all());
+		var dataObj = req.params.all();
+		delete dataObj['id'];
+		console.log(dataObj);
+		Data.create(req.params.all(), function(err, user){
+			if(err){
+				return next(err);
+			}
+
+			res.redirect('user/naive/showData');
+		});
 	}
 };

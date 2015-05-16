@@ -1,5 +1,5 @@
-# ASailsNaiveBayes
+# A Sails Naive-Bayes App
 
 This is My School Project <br> 
-Naive-Bayes for Decision SUpport System with Sails
+Naive-Bayes for Decision Support System with Sails
 

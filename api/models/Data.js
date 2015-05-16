@@ -8,8 +8,9 @@
 module.exports = {
 
 	schema: true,
+  
   attributes: {
-  	penghasilan: {
+    penghasilan: {
   		type: 'integer'
   	},
 
